@@ -1,0 +1,20 @@
+{
+  "name": "playwright-agents",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Let any OpenAI-compatible model (Ollama, LM Studio, vLLM, llama.cpp, OpenRouter, OpenAI) drive a real browser through Playwright MCP.",
+  "type": "module",
+  "bin": {
+    "browser-agent": "./browser-agent.mjs"
+  },
+  "scripts": {
+    "agent": "node browser-agent.mjs",
+    "mcp:http": "./start-mcp-http.sh"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2"
+  }
+}

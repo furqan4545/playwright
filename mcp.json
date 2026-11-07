@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "/opt/homebrew/bin/node",
+      "args": [
+        "/opt/homebrew/lib/node_modules/@playwright/mcp/cli.js",
+        "--browser",
+        "chromium"
+      ]
+    }
+  }
+}
