@@ -4,6 +4,21 @@ Playwright is installed on this Mac and wired into every agent you have, so Clau
 and open-source models can open pages, read them, click, type, fill forms, take screenshots,
 and work with tabs in a real browser.
 
+## Set up a Mac
+
+```bash
+git clone https://github.com/furqan4545/playwright.git
+cd playwright
+./install.sh
+```
+
+- **Needs:** macOS and Node.js 20 or newer. The script offers to install Node with Homebrew.
+- **Installs:** Playwright, its MCP server, the CLI and Chromium.
+- **Connects:** Claude Code, Claude Desktop, Codex and OpenCode, when they're installed.
+- **Checks:** that the browser starts.
+- **Safe to re-run:** `./install.sh --dry-run` shows what it would change, and `./install.sh --help` lists the options.
+- **Removing it:** `./uninstall.sh` (add `--all` to also remove the packages and browsers).
+
 ## What is installed
 
 | Piece | Version | What it is for |
@@ -122,17 +137,11 @@ that opens, and agents reuse that profile next time.
 
 ## Updating
 
-```bash
-npm install -g playwright@latest @playwright/mcp@latest @playwright/cli@latest
-playwright-cli install-browser chromium
-node "$(npm root -g)/@playwright/mcp/node_modules/playwright-core/cli.js" install chromium
-playwright install chromium
-playwright-cli install --skills claude --global && playwright-cli install --skills agents --global
-```
+Run `./install.sh` again. It updates the packages to their latest versions and downloads any new browser build they need.
 
 ## What was changed on this Mac, and how to undo it
 
-Backups of every config file from before the change are in `~/.playwright/backups/`.
+`./uninstall.sh` undoes all of this for you. Backups of every config file from before each change are in `~/.playwright/backups/`.
 
 | Changed | Undo |
 |---|---|
